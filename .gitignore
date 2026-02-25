@@ -1,0 +1,6 @@
+ecom-aigc/data_raw/
+ecom-aigc/data_processed/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
