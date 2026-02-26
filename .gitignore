@@ -4,3 +4,4 @@ ecom-aigc/data_processed/
 __pycache__/
 .ipynb_checkpoints/
 .DS_Store
+anaconda_projects/
