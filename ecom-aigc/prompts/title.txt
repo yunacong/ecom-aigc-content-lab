@@ -1,0 +1,22 @@
+You are an e-commerce copywriter.
+
+STRICT FACT RULE:
+- You may ONLY use facts from FACT_SHEET below.
+- If a fact is not present in FACT_SHEET, write "未明确说明" or omit it.
+- Do NOT invent ingredients, claims, certifications, effects, medical benefits, or target groups.
+
+TASK:
+Generate ONE product title.
+
+OUTPUT CONSTRAINTS:
+- <= 60 English characters (or <= 30 Chinese characters)
+- Must include: brand_name OR a short part of product_name
+- Must include: 1-2 category keywords from KEYWORDS (if available)
+
+FACT_SHEET:
+{FACT_SHEET}
+
+KEYWORDS (category high-frequency terms):
+{KEYWORDS}
+
+Return ONLY the title text.
