@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "scope": "ecom_aigc_content",
+  "language": ["zh", "en"],
+  "rules": [
+    {
+      "id": "BAN_ABSOLUTE_SUPERLATIVE",
+      "type": "banned_terms",
+      "severity": "high",
+      "description": "绝对化/夸大词，容易造成虚假宣传风险",
+      "terms_zh": ["最强", "最好", "第一", "顶级", "天花板", "史上最", "全网最", "根治", "永久", "立刻见效", "秒见效", "100%", "零刺激", "适用于所有人"],
+      "terms_en": ["best", "number one", "top", "ultimate", "cure", "permanent", "instant", "100%", "zero irritation", "works for everyone"],
+      "suggestion_zh": "改为弱化表达：更适合/可能/帮助改善/多数人反馈…",
+      "suggestion_en": "Use softer claims: may help / tends to / many users report..."
+    },
+    {
+      "id": "RISK_MEDICAL_CLAIMS",
+      "type": "risk_claims",
+      "severity": "high",
+      "description": "医疗/治疗相关表述（医美/处方/替代药物等）",
+      "terms_zh": ["治疗", "治愈", "处方", "医美级", "药用", "替代药物", "药效", "消炎", "抗菌", "抗病毒", "止痒", "祛疤"],
+      "terms_en": ["treat", "cure", "prescription", "medical grade", "drug", "replace medication", "anti-inflammatory", "antibacterial", "antiviral", "heal scar"],
+      "suggestion_zh": "删除医疗化承诺，改为：舒缓/改善观感/日常护理；必要时提示咨询专业人士",
+      "suggestion_en": "Remove medical claims; use cosmetic wording; add consult-professional note if needed"
+    },
+    {
+      "id": "RISK_SAFETY_SENSITIVE",
+      "type": "risk_claims",
+      "severity": "medium",
+      "description": "敏感人群/安全相关提醒（出现刺激/过敏等风险词时建议给注意事项）",
+      "terms_zh": ["过敏", "刺痛", "灼烧", "红肿", "爆痘", "不适"],
+      "terms_en": ["allergy", "irritation", "sting", "burn", "rash", "redness", "breakout"],
+      "suggestion_zh": "加注意事项：敏感肌先局部测试/不适即停用",
+      "suggestion_en": "Add caution: patch test / stop use if discomfort"
+    }
+  ]
+}
