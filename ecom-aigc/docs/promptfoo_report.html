@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Ecom AIGC Content Lab - Regression Eval (No API)</title>
+    <style>
+      body {
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        word-break: break-all;
+      }
+      th,
+      td {
+        padding: 5px;
+        min-width: 200px;
+        white-space: pre-wrap;
+        vertical-align: top;
+      }
+
+      tr > td[data-content^='[PASS]'] {
+        color: green;
+      }
+      tr > td[data-content^='[FAIL]'] {
+        color: #ad0000;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        
+        <th>expected_keywords</th>
+        
+        <th>product_id</th>
+        
+        <th>seed</th>
+        
+        <th>[file://pf_provider.py] Generate a compliant ecommerce title for product {{product_id}}</th>
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          <td data-content="[&quot;moisturizer&quot;,&quot;hydrating&quot;,&quot;night&quot;]">[&quot;moisturizer&quot;,&quot;hydrating&quot;,&quot;night&quot;]</td>
+          
+          <td data-content="P420652">P420652</td>
+          
+          <td data-content="0">0</td>
+          
+          <td data-content="[PASS] (1.00)
+
+LANEIGE Lip Sleeping Mask Intense Hydration wi | moisturizer
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+LANEIGE Lip Sleeping Mask Intense Hydration wi | moisturizer
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&quot;clean&quot;,&quot;gentle&quot;,&quot;hydrating&quot;]">[&quot;clean&quot;,&quot;gentle&quot;,&quot;hydrating&quot;]</td>
+          
+          <td data-content="P7880">P7880</td>
+          
+          <td data-content="1">1</td>
+          
+          <td data-content="[PASS] (1.00)
+
+fresh Soy Hydrating Gentle Face Cleanser | clean
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+fresh Soy Hydrating Gentle Face Cleanser | clean
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&quot;oil&quot;,&quot;smooth&quot;,&quot;light&quot;]">[&quot;oil&quot;,&quot;smooth&quot;,&quot;light&quot;]</td>
+          
+          <td data-content="P218700">P218700</td>
+          
+          <td data-content="2">2</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Josie Maran 100 percent Pure Argan Oil | oil
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Josie Maran 100 percent Pure Argan Oil | oil
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&quot;cream&quot;,&quot;moisturizing&quot;,&quot;soft&quot;]">[&quot;cream&quot;,&quot;moisturizing&quot;,&quot;soft&quot;]</td>
+          
+          <td data-content="P248407">P248407</td>
+          
+          <td data-content="3">3</td>
+          
+          <td data-content="[PASS] (1.00)
+
+First Aid Beauty Ultra Repair Cream Intense Hydratio | cream
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+First Aid Beauty Ultra Repair Cream Intense Hydratio | cream
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&quot;serum&quot;,&quot;hydrating&quot;,&quot;glow&quot;]">[&quot;serum&quot;,&quot;hydrating&quot;,&quot;glow&quot;]</td>
+          
+          <td data-content="P269122">P269122</td>
+          
+          <td data-content="4">4</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Dr. Dennis Gross Skincare Alpha Beta Extra Strength  | serum
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Dr. Dennis Gross Skincare Alpha Beta Extra Strength  | serum
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&quot;gentle&quot;,&quot;clean&quot;,&quot;smooth&quot;]">[&quot;gentle&quot;,&quot;clean&quot;,&quot;smooth&quot;]</td>
+          
+          <td data-content="P394639">P394639</td>
+          
+          <td data-content="5">5</td>
+          
+          <td data-content="[PASS] (1.00)
+
+belif The True Cream Aqua Bomb | gentle
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+belif The True Cream Aqua Bomb | gentle
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&quot;clean&quot;,&quot;fresh&quot;,&quot;soft&quot;]">[&quot;clean&quot;,&quot;fresh&quot;,&quot;soft&quot;]</td>
+          
+          <td data-content="P411387">P411387</td>
+          
+          <td data-content="6">6</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Youth To The People Superfood Antioxidant Cleanser | clean
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Youth To The People Superfood Antioxidant Cleanser | clean
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&quot;clean&quot;,&quot;makeup&quot;,&quot;removing&quot;]">[&quot;clean&quot;,&quot;makeup&quot;,&quot;removing&quot;]</td>
+          
+          <td data-content="P417238">P417238</td>
+          
+          <td data-content="7">7</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Farmacy Green Clean Makeup Removing Cleansing Balm | clean
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Farmacy Green Clean Makeup Removing Cleansing Balm | clean
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&quot;firming&quot;,&quot;peptide&quot;,&quot;smooth&quot;]">[&quot;firming&quot;,&quot;peptide&quot;,&quot;smooth&quot;]</td>
+          
+          <td data-content="P427421">P427421</td>
+          
+          <td data-content="8">8</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Drunk Elephant Protini Polypeptide Firming Refilla | firming
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Drunk Elephant Protini Polypeptide Firming Refilla | firming
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="[&quot;clean&quot;,&quot;balm&quot;,&quot;gentle&quot;]">[&quot;clean&quot;,&quot;balm&quot;,&quot;gentle&quot;]</td>
+          
+          <td data-content="P450271">P450271</td>
+          
+          <td data-content="9">9</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Farmacy Green Clean Makeup Meltaway Cleansing Balm L | clean
+
+Pass Reason: All assertions passed">[PASS] (1.00)
+
+Farmacy Green Clean Makeup Meltaway Cleansing Balm L | clean
+
+Pass Reason: All assertions passed</td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>

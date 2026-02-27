@@ -1,0 +1,53 @@
+description: "Ecom AIGC Content Lab - Regression Eval (No API)"
+
+# ✅ 只写 providers（不要 targets）
+providers:
+  - id: "file://pf_provider.py"
+
+# 这里的 prompt 只是一个占位；真正生成逻辑在 pf_provider.py 里
+prompts:
+  - "Generate a compliant ecommerce title for product {{product_id}}"
+
+tests:
+  - "file://test_cases.csv"
+
+defaultTest:
+  # 断言：你可以理解成“自动化验收标准”
+  assert:
+    # 1) 标题长度
+    - type: javascript
+      value: "output && output.length <= 60"
+
+    # 2) 禁用词（示例：treat/treatment/cure/heal）——你也可以在 csv 里扩展
+    - type: javascript
+      value: "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+
+    # 3) 需要命中至少一个期望关键词（test_cases.csv 里提供 expected_keywords 列，JSON 数组字符串）
+    - type: javascript
+      value: |
+        // keyword must-hit (debuggable)
+        const raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : "[]";
+        let arr = [];
+        try {
+          arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));
+        } catch (e) {
+          return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };
+        }
+    
+        const out = String(output || "");
+        const outLow = out.toLowerCase();
+        const hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));
+    
+        if (arr.length === 0) {
+          return { pass: true, score: 1, reason: "No expected_keywords provided -> skip" };
+        }
+    
+        if (hits.length > 0) {
+          return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(",")}` };
+        }
+    
+        return {
+          pass: false,
+          score: 0,
+          reason: `No keyword hit. expected=${arr.slice(0,5).join(",")} | output=${out.slice(0,120)}`
+        };

@@ -1,0 +1,11 @@
+product_id,expected_keywords,seed
+P420652,"[""moisturizer"",""hydrating"",""night""]",0
+P7880,"[""clean"",""gentle"",""hydrating""]",1
+P218700,"[""oil"",""smooth"",""light""]",2
+P248407,"[""cream"",""moisturizing"",""soft""]",3
+P269122,"[""serum"",""hydrating"",""glow""]",4
+P394639,"[""gentle"",""clean"",""smooth""]",5
+P411387,"[""clean"",""fresh"",""soft""]",6
+P417238,"[""clean"",""makeup"",""removing""]",7
+P427421,"[""firming"",""peptide"",""smooth""]",8
+P450271,"[""clean"",""balm"",""gentle""]",9

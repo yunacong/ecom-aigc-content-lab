@@ -1,0 +1,1086 @@
+{
+  "evalId": "eval-Doa-2026-02-27T21:30:22",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-02-27T21:30:22.998Z",
+    "prompts": [
+      {
+        "id": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "raw": "Generate a compliant ecommerce title for product {{product_id}}",
+        "label": "Generate a compliant ecommerce title for product {{product_id}}",
+        "provider": "file://pf_provider.py",
+        "metrics": {
+          "score": 10,
+          "testPassCount": 10,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "assertPassCount": 30,
+          "assertFailCount": 0,
+          "totalLatencyMs": 3252,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 10,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0
+              }
+            }
+          },
+          "namedScores": {},
+          "namedScoresCount": {},
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=moisturizer"
+            }
+          ]
+        },
+        "id": "ecbb1fdd-9ba3-425a-a77c-e207e36e4d7b",
+        "latencyMs": 646,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P420652",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "LANEIGE Lip Sleeping Mask Intense Hydration wi | moisturizer",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P420652",
+            "expected_keywords": "[\"moisturizer\",\"hydrating\",\"night\"]",
+            "seed": "0"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #1",
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "product_id": "P420652",
+          "expected_keywords": "[\"moisturizer\",\"hydrating\",\"night\"]",
+          "seed": "0"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=clean,gentle,hydrating"
+            }
+          ]
+        },
+        "id": "b693752c-3802-4ac9-88ee-8079476df7aa",
+        "latencyMs": 646,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P7880",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "fresh Soy Hydrating Gentle Face Cleanser | clean",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P7880",
+            "expected_keywords": "[\"clean\",\"gentle\",\"hydrating\"]",
+            "seed": "1"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #2",
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "product_id": "P7880",
+          "expected_keywords": "[\"clean\",\"gentle\",\"hydrating\"]",
+          "seed": "1"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=oil"
+            }
+          ]
+        },
+        "id": "cbd093a2-701f-4cbf-bac2-8cab2b3197c4",
+        "latencyMs": 647,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P218700",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "Josie Maran 100 percent Pure Argan Oil | oil",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P218700",
+            "expected_keywords": "[\"oil\",\"smooth\",\"light\"]",
+            "seed": "2"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #3",
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "product_id": "P218700",
+          "expected_keywords": "[\"oil\",\"smooth\",\"light\"]",
+          "seed": "2"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=cream"
+            }
+          ]
+        },
+        "id": "a7e7cf63-e0c6-4ca6-8ae9-a26837eb12c6",
+        "latencyMs": 648,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P248407",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "First Aid Beauty Ultra Repair Cream Intense Hydratio | cream",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P248407",
+            "expected_keywords": "[\"cream\",\"moisturizing\",\"soft\"]",
+            "seed": "3"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #4",
+          "metadata": {}
+        },
+        "testIdx": 3,
+        "vars": {
+          "product_id": "P248407",
+          "expected_keywords": "[\"cream\",\"moisturizing\",\"soft\"]",
+          "seed": "3"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=serum"
+            }
+          ]
+        },
+        "id": "f9b8cc47-d96a-45bf-9895-278144682ee6",
+        "latencyMs": 109,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P269122",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "Dr. Dennis Gross Skincare Alpha Beta Extra Strength  | serum",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P269122",
+            "expected_keywords": "[\"serum\",\"hydrating\",\"glow\"]",
+            "seed": "4"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #5",
+          "metadata": {}
+        },
+        "testIdx": 4,
+        "vars": {
+          "product_id": "P269122",
+          "expected_keywords": "[\"serum\",\"hydrating\",\"glow\"]",
+          "seed": "4"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=gentle"
+            }
+          ]
+        },
+        "id": "8c734419-0032-4ce8-b8db-5726b6d8dfc1",
+        "latencyMs": 110,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P394639",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "belif The True Cream Aqua Bomb | gentle",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P394639",
+            "expected_keywords": "[\"gentle\",\"clean\",\"smooth\"]",
+            "seed": "5"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #6",
+          "metadata": {}
+        },
+        "testIdx": 5,
+        "vars": {
+          "product_id": "P394639",
+          "expected_keywords": "[\"gentle\",\"clean\",\"smooth\"]",
+          "seed": "5"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=clean"
+            }
+          ]
+        },
+        "id": "8551f4e4-523d-4954-ad58-069897fa5f5f",
+        "latencyMs": 110,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P411387",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "Youth To The People Superfood Antioxidant Cleanser | clean",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P411387",
+            "expected_keywords": "[\"clean\",\"fresh\",\"soft\"]",
+            "seed": "6"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #7",
+          "metadata": {}
+        },
+        "testIdx": 6,
+        "vars": {
+          "product_id": "P411387",
+          "expected_keywords": "[\"clean\",\"fresh\",\"soft\"]",
+          "seed": "6"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=clean,makeup,removing"
+            }
+          ]
+        },
+        "id": "5f9d9058-7d0b-4aa4-88cf-25f32aba3cc5",
+        "latencyMs": 110,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P417238",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "Farmacy Green Clean Makeup Removing Cleansing Balm | clean",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P417238",
+            "expected_keywords": "[\"clean\",\"makeup\",\"removing\"]",
+            "seed": "7"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #8",
+          "metadata": {}
+        },
+        "testIdx": 7,
+        "vars": {
+          "product_id": "P417238",
+          "expected_keywords": "[\"clean\",\"makeup\",\"removing\"]",
+          "seed": "7"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=firming,peptide"
+            }
+          ]
+        },
+        "id": "1bb34341-7301-4938-9fb8-117f5343e6ac",
+        "latencyMs": 112,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P427421",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "Drunk Elephant Protini Polypeptide Firming Refilla | firming",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P427421",
+            "expected_keywords": "[\"firming\",\"peptide\",\"smooth\"]",
+            "seed": "8"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #9",
+          "metadata": {}
+        },
+        "testIdx": 8,
+        "vars": {
+          "product_id": "P427421",
+          "expected_keywords": "[\"firming\",\"peptide\",\"smooth\"]",
+          "seed": "8"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {},
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "output && output.length <= 60"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Assertion passed",
+              "assertion": {
+                "type": "javascript",
+                "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "hit=clean,balm"
+            }
+          ]
+        },
+        "id": "317c815f-b1c1-453c-b88e-d8924a89339d",
+        "latencyMs": 114,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Generate a compliant ecommerce title for product P450271",
+          "label": "Generate a compliant ecommerce title for product {{product_id}}",
+          "config": {}
+        },
+        "promptId": "97632414159bc586712538e45d38377ecba92cec5be5e6c74fe4a89ddae81bef",
+        "promptIdx": 0,
+        "provider": {
+          "id": "file://pf_provider.py",
+          "label": ""
+        },
+        "response": {
+          "output": "Farmacy Green Clean Makeup Meltaway Cleansing Balm L | clean",
+          "cached": false
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "vars": {
+            "product_id": "P450271",
+            "expected_keywords": "[\"clean\",\"balm\",\"gentle\"]",
+            "seed": "9"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "output && output.length <= 60"
+            },
+            {
+              "type": "javascript",
+              "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+            },
+            {
+              "type": "javascript",
+              "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+            }
+          ],
+          "options": {},
+          "description": "Row #10",
+          "metadata": {}
+        },
+        "testIdx": 9,
+        "vars": {
+          "product_id": "P450271",
+          "expected_keywords": "[\"clean\",\"balm\",\"gentle\"]",
+          "seed": "9"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 10,
+      "failures": 0,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 0,
+        "total": 0,
+        "numRequests": 10,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0
+          }
+        }
+      },
+      "durationMs": 903,
+      "evaluationDurationMs": 903
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "Ecom AIGC Content Lab - Regression Eval (No API)",
+    "prompts": [
+      "Generate a compliant ecommerce title for product {{product_id}}"
+    ],
+    "providers": [
+      {
+        "id": "file://pf_provider.py"
+      }
+    ],
+    "tests": [
+      "file://test_cases.csv"
+    ],
+    "scenarios": [],
+    "env": {},
+    "defaultTest": {
+      "assert": [
+        {
+          "type": "javascript",
+          "value": "output && output.length <= 60"
+        },
+        {
+          "type": "javascript",
+          "value": "!/(\\btreat(ment)?\\b|\\bcure\\b|\\bheal\\b)/i.test(output)"
+        },
+        {
+          "type": "javascript",
+          "value": "// keyword must-hit (debuggable)\nconst raw = (context && context.vars && context.vars.expected_keywords) ? context.vars.expected_keywords : \"[]\";\nlet arr = [];\ntry {\n  arr = Array.isArray(raw) ? raw : JSON.parse(String(raw));\n} catch (e) {\n  return { pass: false, score: 0, reason: `Parse expected_keywords failed. raw=${String(raw).slice(0,120)}` };\n}\n\nconst out = String(output || \"\");\nconst outLow = out.toLowerCase();\nconst hits = arr.filter(k => outLow.includes(String(k).toLowerCase()));\n\nif (arr.length === 0) {\n  return { pass: true, score: 1, reason: \"No expected_keywords provided -> skip\" };\n}\n\nif (hits.length > 0) {\n  return { pass: true, score: 1, reason: `hit=${hits.slice(0,5).join(\",\")}` };\n}\n\nreturn {\n  pass: false,\n  score: 0,\n  reason: `No keyword hit. expected=${arr.slice(0,5).join(\",\")} | output=${out.slice(0,120)}`\n};\n"
+        }
+      ],
+      "vars": {},
+      "options": {},
+      "metadata": {}
+    },
+    "outputPath": [
+      "../docs/promptfoo_report.html",
+      "../docs/promptfoo_report.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {}
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.120.25",
+    "nodeVersion": "v25.6.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "exportedAt": "2026-02-27T21:30:23.980Z",
+    "evaluationCreatedAt": "2026-02-27T21:30:22.998Z"
+  }
+}
