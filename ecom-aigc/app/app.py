@@ -11,22 +11,29 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parents[1]   # ecom-aigc/
 OUT = ROOT / "data_processed"
 DOC = ROOT / "docs"
+SAMPLE = ROOT / "data_sample"
 
 # ---------------- Load data (cached) ----------------
 @st.cache_data
 def load_data():
-    products = pd.read_csv(OUT / "product_facts.csv")
-    reviews = pd.read_csv(OUT / "reviews.csv")
+    # prefer sample data on cloud
+    pf_path = SAMPLE / "product_facts_sample.csv"
+    rv_path = SAMPLE / "reviews_sample.csv"
+    lex_path = SAMPLE / "keyword_lexicon_sample.csv"
 
-    # keyword lexicon (Day3)
-    lex = pd.read_csv(OUT / "keyword_lexicon.csv")
+    if pf_path.exists() and rv_path.exists() and lex_path.exists():
+        products = pd.read_csv(pf_path)
+        reviews = pd.read_csv(rv_path)
+        lex = pd.read_csv(lex_path)
+    else:
+        products = pd.read_csv(OUT / "product_facts.csv")
+        reviews = pd.read_csv(OUT / "reviews.csv")
+        lex = pd.read_csv(OUT / "keyword_lexicon.csv")
+
     lex_pos = lex[lex["polarity"] != "-"].copy()
     lex_neg = lex[lex["polarity"] == "-"].copy()
-
-    # policy rules (Day5)
     policy = json.loads((DOC / "policy_rules.json").read_text(encoding="utf-8"))
     return products, reviews, lex_pos, lex_neg, policy
-
 def safe(v):
     if pd.isna(v):
         return "未明确说明"
