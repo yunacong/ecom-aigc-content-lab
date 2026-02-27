@@ -82,7 +82,7 @@
 ---
 
 ## 7. Demo 与交付物
-- Repo：【填这里：你的 GitHub 仓库链接】
+- Repo：【https://github.com/yunacong/ecom-aigc-content-lab】
 - Demo：【填这里：你的 Streamlit Cloud 链接】
 - 交付物：
   - `docs/CONTENT_SPEC.md`（输出规范）
