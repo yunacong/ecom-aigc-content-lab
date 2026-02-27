@@ -83,7 +83,7 @@
 
 ## 7. Demo 与交付物
 - Repo：【https://github.com/yunacong/ecom-aigc-content-lab】
-- Demo：【填这里：你的 Streamlit Cloud 链接】
+- Demo：【https://ecom-aigc-content-lab-fuetjapp5aohzuatuewydxz.streamlit.app/】
 - 交付物：
   - `docs/CONTENT_SPEC.md`（输出规范）
   - `docs/policy_rules.json`（合规规则）
