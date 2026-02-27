@@ -15,8 +15,8 @@
   - 多版本生成 + 自动评分 + compare 看板
   - promptfoo 回归测试（10→30 可扩展）
   
-  - Demo Home screenshot: [demo_home.png](ecom-aigc/docs/images/demo_home.png)
-  - Demo Compare screenshot: [demo_compare.png](ecom-aigc/docs/images/demo_compare.png)
+Demo Home screenshot: [demo_home.png](ecom-aigc/docs/images/demo_home.png)
+Demo Compare screenshot: [demo_compare.png](ecom-aigc/docs/images/demo_compare.png)
 
 
 
