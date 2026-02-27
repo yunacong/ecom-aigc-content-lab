@@ -307,6 +307,13 @@ pos_map, neg_map = make_keyword_maps(lex_pos, lex_neg, top_k=30)
 # ===== Header =====
 st.title("Ecom AIGC Content Lab — Demo")
 st.caption("选择商品 → 多版本生成 → 自动评分/合规 → 导出投放素材包")
+tab1, tab2 = st.tabs(["🏠 生成首页", "📊 对比看板"])
+with tab2:
+    st.markdown('<div class="card"><div class="card-title">对比看板</div>', unsafe_allow_html=True)
+    st.write("生成完成后可在对比看板里查看版本对比、失败原因与推荐。")
+    if st.button("打开版本对比与选优看板", use_container_width=True):
+        st.switch_page("pages/compare.py")
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # ===== Input panel under title (NO sidebar) =====
 
