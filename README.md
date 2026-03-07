@@ -23,3 +23,9 @@ Demo Compare screenshot: [demo_compare.png](ecom-aigc/docs/images/demo_compare.p
  ![Demo Home](ecom-aigc/docs/images/demo_home.png)
  ![Demo Compare](ecom-aigc/docs/images/demo_compare.png)
   
+## Figma
+
+<img width="719" height="486" alt="Flow Diagram" src="https://github.com/user-attachments/assets/e027d643-2402-410f-8fda-09408d9e8228" />
+
+<img width="1536" height="1024" alt="IA : Wireframe" src="https://github.com/user-attachments/assets/5316b7b2-6113-47c5-bc96-d2ff83efba10" />
+
